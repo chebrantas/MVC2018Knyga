@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC2018Knyga", "MVC2018Knyga\MVC2018Knyga.csproj", "{3C316A5E-7121-4859-A587-1D9763800C9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC2018Knyga.Tests", "MVC2018Knyga.Tests\MVC2018Knyga.Tests.csproj", "{668A3837-9EF8-411A-9A64-9AA6794BE4F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C316A5E-7121-4859-A587-1D9763800C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C316A5E-7121-4859-A587-1D9763800C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C316A5E-7121-4859-A587-1D9763800C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C316A5E-7121-4859-A587-1D9763800C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{668A3837-9EF8-411A-9A64-9AA6794BE4F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{668A3837-9EF8-411A-9A64-9AA6794BE4F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{668A3837-9EF8-411A-9A64-9AA6794BE4F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{668A3837-9EF8-411A-9A64-9AA6794BE4F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F260A42C-A5A0-4E7D-B650-0E777EDFA102}
+	EndGlobalSection
+EndGlobal

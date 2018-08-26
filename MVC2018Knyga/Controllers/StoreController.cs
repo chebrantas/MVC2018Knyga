@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MVC2018Knyga.Models;
 
 namespace MVC2018Knyga.Controllers
 {
@@ -11,7 +12,7 @@ namespace MVC2018Knyga.Controllers
         // GET: Store
         public ActionResult Index()
         {
-            ViewBag.Message = "aaaa";
+            ViewBag.Message = "Store/Index()";
             return View();
         }
         // GET: Store
@@ -23,6 +24,24 @@ namespace MVC2018Knyga.Controllers
         public string Details()
         {
             return "Hello from Details";
+        }
+        public ActionResult List()
+        {
+            var albums = new List<Album>();
+            for (int i = 0; i < 10; i++)
+            {
+                albums.Add(new Album { Title = "Album " + i });
+            }
+            return View(albums);
+        }
+        public ActionResult Edit()
+        {
+            var albums = new List<Album>();
+            for (int i = 0; i < 10; i++)
+            {
+                albums.Add(new Album { Title = "Album " + i });
+            }
+            return View(albums);
         }
     }
 }

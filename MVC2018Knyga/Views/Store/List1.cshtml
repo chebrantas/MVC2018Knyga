@@ -1,0 +1,12 @@
+﻿@using MVC2018Knyga.Models
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<ul>
+    @foreach(Album a in (ViewBag.Albums as IEnumerable<Album>))
+    {
+        <li>@a.Title</li>
+    }
+</ul>

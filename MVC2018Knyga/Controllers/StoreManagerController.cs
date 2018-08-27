@@ -74,6 +74,14 @@ namespace MVC2018Knyga.Models
             {
                 return HttpNotFound();
             }
+
+            //AlbumEditViewModel model = new AlbumEditViewModel
+            //{
+            //    AlbumToEdit = album,
+            //    Genres = new SelectList(db.Genres, "GenreId", "Name", album.GenreId),
+            //    Artist = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId)
+            //};
+
             ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);
             ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name", album.GenreId);
             return View(album);

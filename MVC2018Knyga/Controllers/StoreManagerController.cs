@@ -63,7 +63,7 @@ namespace MVC2018Knyga.Models
         }
 
         // GET: StoreManager/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edt(int? id)
         {
             if (id == null)
             {

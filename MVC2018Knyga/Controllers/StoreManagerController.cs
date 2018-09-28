@@ -63,7 +63,7 @@ namespace MVC2018Knyga.Models
         }
 
         // GET: StoreManager/Edit/5
-        public ActionResult Edt(int? id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -81,7 +81,6 @@ namespace MVC2018Knyga.Models
             //    Genres = new SelectList(db.Genres, "GenreId", "Name", album.GenreId),
             //    Artist = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId)
             //};
-
             ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);
             ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name", album.GenreId);
             return View(album);
@@ -94,14 +93,16 @@ namespace MVC2018Knyga.Models
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "AlbumId,GenreId,ArtistId,Title,Price,AlbumArtUrl")] Album album)
         {
+            //ModelState.IsValid jau tikrina serverio lygmenyje ne vartotojo
             if (ModelState.IsValid)
             {
                 db.Entry(album).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            
             ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);
-            ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name", album.GenreId);
+            ViewBag.GenreId = new SelectList(db.Genres.OrderBy(g=>g.Name), "GenreId", "Name", album.GenreId);
             return View(album);
         }
 
@@ -130,7 +131,34 @@ namespace MVC2018Knyga.Models
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult Bandymai(int? id)
+        {
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //Album album = db.Albums.Find(id);
+            //if (album == null)
+            //{
+            //    return HttpNotFound();
+            //}
 
+            ////AlbumEditViewModel model = new AlbumEditViewModel
+            ////{
+            ////    AlbumToEdit = album,
+            ////    Genres = new SelectList(db.Genres, "GenreId", "Name", album.GenreId),
+            ////    Artist = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId)
+            ////};
+            //ViewBag.ArtistId = new SelectList(db.Artists, "ArtistId", "Name", album.ArtistId);
+            //ViewBag.GenreId = new SelectList(db.Genres, "GenreId", "Name", album.GenreId);
+            //return View(album);
+            var albums = db.Albums.Include(a => a.Artist).Include(a => a.Genre);
+            return View(albums.ToList());
+        }
+
+        //public ActionResult PartialView() {
+        //    return View();
+        //}
         protected override void Dispose(bool disposing)
         {
             if (disposing)

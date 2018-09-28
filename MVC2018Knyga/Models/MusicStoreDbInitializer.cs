@@ -18,6 +18,13 @@ namespace MVC2018Knyga.Models
                 Price = 9.99m,
                 Title = "Caravan"
             });
+            context.Albums.Add(new Album
+            {
+                Artist = new Artist { Name = "Rush" },
+                Genre = new Genre { Name = "Jazz" },
+                Price = 19.99m,
+                Title = "Supersong"
+            });
             base.Seed(context);
         }
     }

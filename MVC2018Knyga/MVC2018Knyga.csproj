@@ -302,6 +302,8 @@
     <Content Include="Views\Genre\Index.cshtml" />
     <Content Include="Views\StoreManager\EditSU_MODELVIEW_VISKAS_VIENAME.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\StoreManager\Bandymai.cshtml" />
+    <Content Include="Views\StoreManager\_PartialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

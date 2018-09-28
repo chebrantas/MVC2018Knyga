@@ -1,0 +1,77 @@
+﻿@model IEnumerable<MVC2018Knyga.Models.Album>
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@*<h2>Edit</h2>
+    @Html.LabelFor(model => model.GenreId, "Genre ne id")
+    @Html.EditorFor(m => m.Title)
+    @Html.DisplayFor(m => m.Title)
+    @Html.PasswordFor(m => m.Title)<br />
+
+    @Html.ActionLink(Model.Genre.Name, "Details", new { id = Model.GenreId, data = "vakar", menuo = "sausis" }, htmlAttributes: new { @class = "btn btn-success" })
+
+    @Url.Action(Model.Genre.Name, "Details", new { id = Model.GenreId, data = "vakar", menuo = "sausis" })<br />
+    @Url.RouteUrl(new { controller = "Store", action = "Edit", HttpRoute = true });<br />
+    @Url.Content("/Content/css")*@
+<div class="form-group">
+
+    <div class="checkbox">
+
+        @Html.CheckBox("Durnas", true, new { id = "Durnas" }) @Html.Label("Durnas", "Durnas")
+
+    </div>
+
+    <div class="checkbox">
+
+        @Html.CheckBox("Durnas", false, new { id = "Protingas" }) @Html.Label("Protingas", "Protingas")
+
+
+    </div>
+
+    <div class="checkbox">
+
+        @Html.CheckBox("Durnas", false, new { id = "Seipsau" }) @Html.Label("Seipsau", "Seipsau")
+
+
+    </div>
+
+</div>
+
+
+
+<div class="form-group">
+
+    <div class="radio-inline">
+
+        @Html.RadioButton("color", "red", new { id = "red" }) @Html.Label("red", "red")
+
+    </div>
+
+    <div class="radio-inline">
+
+        @Html.RadioButton("color", "green", true, new { id = "green" })@Html.Label("green", "green")
+
+    </div>
+
+    <div class="radio-inline">
+
+        @Html.RadioButton("color", "blue", new { id = "blue" })@Html.Label("blue", "blue")
+
+    </div>
+
+</div>
+
+<br />
+i=@Html.Partial("_PartialView")<br /><br />
+@*@foreach (var item in Model)
+{
+
+    @*<span>a = </span>{ Html.RenderPartial("PartialView"); }
+    @Html.Partial("Details", item)
+
+}*@
+
+@*is kart per controleri ikelia gauta jo rezultata o ne tik view viena be apskaiciavimu*@
+@Html.Action("Edit",new { id = 2 })

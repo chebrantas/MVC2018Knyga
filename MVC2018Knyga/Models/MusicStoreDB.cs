@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using MVC2018Knyga.Models.EntityTypeConfiguration;
 
 namespace MVC2018Knyga.Models
 {
@@ -26,5 +27,17 @@ namespace MVC2018Knyga.Models
         public DbSet<Artist> Artists { get; set; }
 
         public DbSet<Genre> Genres { get; set; }
+        public DbSet<Order> Orders { get; set; }
+
+
+
+        //naudojam kad visus nustatymus duomenu bazei atliktu pagal nurodymus ko nepadare automatiskai . visi nustatymai sudeti i 
+        //Models/EntityTypeConfiguration o is ten uzloadinami OnModelCreating metodu
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new OrderConfiguartion());
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

@@ -35,7 +35,7 @@ namespace MVC2018Knyga.Models
         //Models/EntityTypeConfiguration o is ten uzloadinami OnModelCreating metodu
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new OrderConfiguartion());
+            //modelBuilder.Configurations.Add(new OrderConfiguartion());
 
             base.OnModelCreating(modelBuilder);
         }

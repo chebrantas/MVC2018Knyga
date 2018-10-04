@@ -18,7 +18,6 @@ namespace MVC2018Knyga.Models.EntityTypeConfiguration
             Property(o => o.LastName).IsRequired();
             Property(o => o.LastName).HasMaxLength(160);
 
-
         }
     }
 }

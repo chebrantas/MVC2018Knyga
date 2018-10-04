@@ -33,15 +33,9 @@ namespace MVC2018Knyga.Controllers
         //patikrina ar  toks username jau yra
         [AllowAnonymous]
         [HttpPost]
-        public JsonResult CheckUserName(string username)
+        public JsonResult CheckUserName(string UserName)
         {
-            bool result = false;
-            var result1 = db.Orders.First(a => a.UserName == username).UserName;
-            if (!String.IsNullOrEmpty(result1))
-            {
-                result = true;
-            }
-            return Json(result, JsonRequestBehavior.AllowGet);
+            return Json(!db.Orders.Any(o => o.UserName == UserName), JsonRequestBehavior.AllowGet);
         }
 
 

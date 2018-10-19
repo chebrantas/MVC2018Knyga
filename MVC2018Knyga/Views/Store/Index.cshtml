@@ -1,18 +1,32 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@model IEnumerable<MVC2018Knyga.Models.Album>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Buy", "Buy", new { id=item.AlbumId }, htmlAttributes: new { @class = "btn btn-default" })
+        </td>
+    </tr>
 }
 
-<h2>Index</h2>
-@ViewBag.Message
-@{
-    string message = "Viskas gerai";
-}
-
-
-<span id="message">88</span>
-<span>@*@Html.Raw("<script>alert(\x27pwnd\x27)</script>")*@</span>
-
-@*@section Footer {
-    This is the <strong>footer</strong>.
-}*@
+</table>

@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@ViewBag.Message
+@{
+    string message = "Viskas gerai";
+}
+
+
+<span id="message">88</span>
+<span>@*@Html.Raw("<script>alert(\x27pwnd\x27)</script>")*@</span>
+
+@*@section Footer {
+    This is the <strong>footer</strong>.
+}*@

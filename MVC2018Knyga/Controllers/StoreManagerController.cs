@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MVC2018Knyga.Models
 {
+    [Authorize(Roles = "Administrator,SuperAdmin", Users = "donatasdaj@gmail.com")]
     public class StoreManagerController : Controller
     {
         private MusicStoreDB db = new MusicStoreDB();

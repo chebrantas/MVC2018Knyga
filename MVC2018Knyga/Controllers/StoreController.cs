@@ -12,8 +12,15 @@ namespace MVC2018Knyga.Controllers
         // GET: Store
         public ActionResult Index()
         {
-            ViewBag.Message = "Store/Index()";
-            return View();
+            var albums = GetAlbums();
+            return View(albums);
+        }
+
+        [Authorize]
+        public ActionResult Buy(int id)
+        {
+            var album = GetAlbums().Single(a => a.AlbumId == id);
+            return View(album);
         }
         // GET: Store
         public string Browse()
@@ -42,6 +49,19 @@ namespace MVC2018Knyga.Controllers
                 albums.Add(new Album { Title = "Album " + i });
             }
             return View(albums);
+        }
+
+        private static List<Album> GetAlbums()
+        {
+            var albums = new List<Album>
+            {
+                new Album { AlbumId = 1, Title = "The Fall of March1", Price=9.99M },
+                new Album { AlbumId = 2, Title = "The Fall of March2", Price = 8.99M },
+                new Album { AlbumId = 3, Title = "The Fall of March3", Price = 7.99M },
+                new Album { AlbumId = 4, Title = "The Fall of March4", Price = 6.99M },
+                new Album { AlbumId = 5, Title = "The Fall of March5", Price = 5.99M },
+            };
+            return albums;
         }
     }
 }

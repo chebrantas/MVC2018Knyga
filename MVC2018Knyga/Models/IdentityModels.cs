@@ -16,6 +16,8 @@ namespace MVC2018Knyga.Models
             // Add custom user claims here
             return userIdentity;
         }
+        public string Address { get; set; }
+        public string TwitterHandle { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

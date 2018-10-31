@@ -67,6 +67,7 @@ namespace MVC2018Knyga.Controllers
         //
         // GET: /Account/Login
         [AllowAnonymous]
+        //[RequireHttps]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;

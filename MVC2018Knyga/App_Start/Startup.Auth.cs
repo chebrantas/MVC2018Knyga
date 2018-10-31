@@ -58,11 +58,12 @@ namespace MVC2018Knyga
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "846251995104-14h54jgi797e6nnv3da41sv8hl8mur0g.apps.googleusercontent.com",
+                ClientSecret = "lQi5NwxWZ811yeNIl0EwuQjR"
+            });
+
         }
     }
 }

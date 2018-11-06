@@ -28,11 +28,24 @@ namespace MVC2018Knyga.Controllers
 
             return View();
         }
-       
+
         public ActionResult Search(string q)
         {
             var album = db.Albums.Include("Artist").Where(a => a.Title.Contains(q)).Take(10);
             return View(album);
+        }
+
+        public ActionResult ArtistSearch(string q)
+        {
+            var artists = GetArtists(q);
+            return PartialView("_ArtistSearch", artists);
+        }
+
+        private List<Artist> GetArtists(string searchString)
+        {
+            //random ismeto sarasa o ne surikiuoja
+            //return db.Artists.Where(a => a.Name.Contains(searchString)).OrderBy(a=>System.Guid.NewGuid()).ToList();
+            return db.Artists.Where(a => a.Name.Contains(searchString)).ToList();
         }
     }
 }

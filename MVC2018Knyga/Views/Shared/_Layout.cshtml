@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    
   
 
 </head>
@@ -31,9 +31,9 @@
                     <li>@Html.ActionLink("Details", "Details", "Store")</li>
                     <li>@Html.ActionLink("List", "List", "Store")</li>
                     <li>@Html.ActionLink("StoreManager", "Index", "StoreManager")</li>
-                    <li>@Html.ActionLink("Artist", "Index", "Artist")</li>
+                    @*<li>@Html.ActionLink("Artist", "Index", "Artist")</li>
                     <li>@Html.ActionLink("Genre", "Index", "Genre")</li>
-                    <li>@Html.ActionLink("Order", "Index", "Order")</li>
+                    <li>@Html.ActionLink("Order", "Index", "Order")</li>*@
 
 
                 </ul>
@@ -43,6 +43,8 @@
     </div>
     <div class="container body-content">
         @RenderBody()
+        
+        <br />
         <hr />
 
         <footer>
@@ -62,6 +64,5 @@
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-
 </body>
 </html>

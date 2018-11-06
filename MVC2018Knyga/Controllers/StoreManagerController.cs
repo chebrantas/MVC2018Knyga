@@ -160,6 +160,22 @@ namespace MVC2018Knyga.Models
         //public ActionResult PartialView() {
         //    return View();
         //}
+
+        public ActionResult DailyDeal()
+        {
+            var album = GetDailyDeal();
+            return PartialView("_DailyDeal", album);
+        }
+
+        private Album GetDailyDeal()
+        {
+            //random ismaiso sarasa ir paima pirma elementa is saraso
+            var album = db.Albums.OrderBy(a => System.Guid.NewGuid()).First();
+            album.Price *= 0.5m;
+            return album;
+        }
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Artist>
+
+@*<div id="searchresults">*@
+    <ol>
+        @foreach (var item in Model)
+        {
+            <li>@item.Name # @item.ArtistId</li>
+        }
+    </ol>
+@*</div>*@
